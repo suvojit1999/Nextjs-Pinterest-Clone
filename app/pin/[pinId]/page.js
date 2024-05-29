@@ -5,7 +5,7 @@ import app from '@/app/Share/firebaseConfig';
 import PinDisplay from '@/app/components/pins/pinDisplay';
 
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
     const db = getFirestore(app)
     const [PinDetail, setPinDetail] = useState([])
 
@@ -34,4 +34,4 @@ const page = ({ params }) => {
     )
 }
 
-export default page
+export default Page

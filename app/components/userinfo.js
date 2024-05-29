@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import copy from 'clipboard-copy';
 import { FaArrowLeft } from "react-icons/fa";
 
-const userinfo = ({userInfo}) => {
+const Userinfo = ({userInfo}) => {
     console.log(userInfo)
     const [currentUrl, setCurrentUrl] = useState('');
     const [isCopied, setIsCopied] = useState(false);
@@ -33,4 +33,4 @@ const userinfo = ({userInfo}) => {
   )
 }
 
-export default userinfo
+export default Userinfo

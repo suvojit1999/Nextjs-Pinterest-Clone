@@ -10,25 +10,25 @@ import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const db = getFirestore(app)
-  
+
   const [Listofpins, setListofpins] = useState([])
 
 
   useEffect(() => {
-        getUserPins()
-}, [])
+    getUserPins()
+  }, [])
 
   const getUserPins = async () => {
     const q = query(collection(db, "pinterest-post"));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-        setListofpins(Listofpins=>[...Listofpins, doc.data()])
+      setListofpins(Listofpins => [...Listofpins, doc.data()])
     });
 
-}
+  }
   return (
     <>
-      <Pinlist  Listofpins={Listofpins}/>
+      <Pinlist Listofpins={Listofpins} />
     </>
   );
 }

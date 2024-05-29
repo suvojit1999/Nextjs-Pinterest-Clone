@@ -9,7 +9,7 @@ import Pinlist from '../components/pins/pinlist';
 import { useRouter } from 'next/navigation';
 
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
     const db = getFirestore(app)
     const router = useRouter()
     const [userInfo, setuserInfo] = useState()
@@ -101,4 +101,4 @@ const page = ({ params }) => {
     )
 }
 
-export default page
+export default Page

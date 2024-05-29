@@ -8,7 +8,7 @@ import app from '@/app/Share/firebaseConfig'
 import { useRouter } from 'next/navigation';
 
 
-const header = () => {
+const Header = () => {
   const { data: session } = useSession()
   const router = useRouter();
   
@@ -131,4 +131,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

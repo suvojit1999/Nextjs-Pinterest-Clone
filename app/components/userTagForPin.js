@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 
-const userTagForPin = ({ PinDetail }) => {
+const UserTagForPin = ({ PinDetail }) => {
 
   const router = useRouter()
 
@@ -23,4 +23,4 @@ const userTagForPin = ({ PinDetail }) => {
   )
 }
 
-export default userTagForPin
+export default UserTagForPin

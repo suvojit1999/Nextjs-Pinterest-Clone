@@ -3,7 +3,7 @@ import React, {useRef} from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-const pinitem = ({item}) => {
+const Pinitem = ({item}) => {
     const router = useRouter()
     const imageRef = useRef(null);
     const textRef = useRef(null);
@@ -31,4 +31,4 @@ const pinitem = ({item}) => {
   )
 }
 
-export default pinitem
+export default Pinitem

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import Pinitem from './pinitem'
 
-const pinlist = ({ Listofpins }) => {
+const Pinlist = ({ Listofpins }) => {
     console.log(Listofpins)
 
 
@@ -11,10 +11,10 @@ const pinlist = ({ Listofpins }) => {
     return (
         <div className='w-[94%] m-auto p-4 space-y-6 md:px-5 columns-2 md:columns-3 lg:columns-4 mb-4 xl:columns-5 '>
             {Listofpins.map((item, index) => (
-                <Pinitem item={item} />
+                <Pinitem item={item} key={index} />
             ))}
         </div>
     )
 }
 
-export default pinlist
+export default Pinlist

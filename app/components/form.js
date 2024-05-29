@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 
 
-const form = () => {
+const Form = () => {
   const { data: session } = useSession()
   const db = getFirestore(app);
   const router = useRouter()
@@ -108,4 +108,4 @@ const form = () => {
   )
 }
 
-export default form
+export default Form

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useSession, signIn, signOut } from "next-auth/react"
 
 
-const userTag = () => {
+const UserTag = () => {
     const{data:session} = useSession()
 
 
@@ -19,4 +19,4 @@ const userTag = () => {
   )
 }
 
-export default userTag
+export default UserTag

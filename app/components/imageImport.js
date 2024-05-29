@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { HiArrowUpCircle } from "react-icons/hi2";
 
-const imageImport = ({setFile}) => {
+const ImageImport = ({setFile}) => {
   // const [file, setFile] = useState(null);
   const [selectedFile,setSelectedFile]=useState();
 
@@ -35,4 +35,4 @@ const imageImport = ({setFile}) => {
   )
 }
 
-export default imageImport
+export default ImageImport

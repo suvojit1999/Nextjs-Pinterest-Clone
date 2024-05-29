@@ -10,7 +10,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 
 
 
-const pinDisplay = ({ PinDetail }) => {
+const PinDisplay = ({ PinDetail }) => {
     const db = getFirestore(app);
     const { data: session } = useSession()
     const router = useRouter()
@@ -73,4 +73,4 @@ const pinDisplay = ({ PinDetail }) => {
     )
 }
 
-export default pinDisplay
+export default PinDisplay
