@@ -99,7 +99,8 @@ const Header = () => {
 
 
   return (
-    <div className='w-[80%] h-[70px] flex justify-center items-center gap-6 m-auto sticky'>
+    <div className='w-[100%] sticky top-0 z-50 bg-white'>
+    <div className='w-[80%] h-[70px] flex justify-center items-center gap-6 m-auto sticky top-0 z-50 bg-white'>
       <Image src='/logo.svg' alt='logo' width={45} height={45} className='hover:bg-gray-300 rounded-full cursor-pointer p-[5px]' />
       <span onClick={()=>{gotoHome()}} className='hidden md:inline p-[7px] bg-black text-zinc-50 font-bold rounded-[20px] w-[70px] text-center cursor-pointer'>Home</span>
       <span onClick={()=>handleCreatPins()} className='hidden md:inline p-[7px] bg-gray-300 font-bold rounded-[20px] w-[80px] text-center cursor-pointer'>Create</span>
@@ -115,7 +116,7 @@ const Header = () => {
 
       {session?.user ? <div className='relative'>
         <div className='w-[30px]'><Image src={session?.user?.image} alt='' width={45} height={45} className='hover:bg-gray-300 rounded-full cursor-pointer ' onClick={() => dropDown()} /></div>
-        <div className='w-[150px] h-[150px] border-[0.5px] border-solid border-zinc-500 justify-center items-center absolute left-[-50px] top-[50px] z-10 hidden dropdown shadow-md shadow-slate-400 gap-1 bg-white'>
+        <div className='w-[150px] h-[150px] border-[0.5px] border-solid border-zinc-500 justify-center items-center absolute left-[-50px] top-[50px] z-50 hidden dropdown shadow-md shadow-slate-400 gap-1 bg-white'>
           <button onClick={() => gotoprofile()} className='w-[148px] h-[35px]  text-sm hover:bg-gray-300'>My Profile</button>
           <button onClick={() => handleCreatPin()} className='w-[148px] h-[35px] text-sm  hover:bg-gray-300'>Create</button>
           <button onClick={() => signOut()} className='w-[148px] h-[35px]  hover:bg-gray-300'>Logout</button>
@@ -127,7 +128,7 @@ const Header = () => {
 
 
 
-    </div>
+    </div></div>
   )
 }
 

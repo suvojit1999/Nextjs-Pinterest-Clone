@@ -28,7 +28,7 @@ export default function Home() {
   }
   return (
     <>
-      <Pinlist Listofpins={Listofpins} />
+      <Pinlist Listofpins={Listofpins} className='absolute z-[-10]'/>
     </>
   );
 }
