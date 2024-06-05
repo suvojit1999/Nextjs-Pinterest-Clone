@@ -4,7 +4,7 @@ import Image from 'next/image'
 import UserTagForPin from '../userTagForPin'
 import { FaArrowLeft } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
 import app from '@/app/Share/firebaseConfig';
 import { useSession, signIn, signOut } from "next-auth/react"
 
@@ -51,6 +51,21 @@ const PinDisplay = ({ PinDetail }) => {
 
     }
 
+    const removePin = async ()=>{
+        if (session) {
+            try {
+                await deleteDoc(doc(db, "saves", PinDetail.Id + session.user.email));
+                setisSaved(false)
+                console.log("i am clicked")
+            } catch {
+                console.log('Error: post not saved')
+            }
+        }
+        else {
+            alert("log in first")
+        }
+    }
+
 
 
 
@@ -61,7 +76,7 @@ const PinDisplay = ({ PinDetail }) => {
                 <div><Image src={PinDetail.image} width={400} height={400} className='rounded-l-[20px]' /></div>
                 <div className=' flex-col justify-start items-start'>
                     <div className='flex justify-end m-[20px] mb-[25px]'>
-                        {isSaved ? <button className='bg-red-600 text-white px-3 py-1 font-bold rounded-md'> Saved!</button> :
+                        {isSaved ? <button className='bg-red-600 text-white px-3 py-1 font-bold rounded-md' onClick={()=> {removePin()}}> Saved!</button> :
                             <button className='bg-red-600 text-white px-3 py-1 font-bold rounded-md' onClick={() => { savePin() }}>Save</button>}
                     </div>
                     <div className='h-[100px]'><h2 className='font-bold text-3xl mb-[20px]'>{PinDetail.title}</h2></div>
